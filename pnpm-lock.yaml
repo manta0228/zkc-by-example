@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  ethers:
+    specifier: ~5.7
+    version: 5.7.2
   parcel:
     specifier: ^2.10.1
     version: 2.10.1(typescript@5.2.2)
@@ -18,7 +21,7 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   zkc-sdk:
-    specifier: 0.1.1-alpha
+    specifier: ^0.1.1-alpha
     version: 0.1.1-alpha(jsdom@21.1.2)(typescript@5.2.2)
 
 devDependencies:
@@ -2948,6 +2951,7 @@ packages:
 
   /abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
     dev: false
 
   /abortcontroller-polyfill@1.7.5:
@@ -3399,6 +3403,7 @@ packages:
   /domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
     dependencies:
       webidl-conversions: 7.0.0
     dev: false

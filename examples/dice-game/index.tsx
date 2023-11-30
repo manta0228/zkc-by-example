@@ -114,8 +114,7 @@ export function Home() {
       // });
 
       const DICE_GAME_MD5 =
-        //  response?.body?.md5 ||
-        '665272C6FD6E4148784BF1BD2905301F';
+        process.env.MD5 || '665272C6FD6E4148784BF1BD2905301F';
 
       // Signed information
       const taskInfo = {
