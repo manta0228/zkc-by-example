@@ -22,8 +22,8 @@
   },
   // Uncomment the next line to run commands after the container is created.
   "updateContentCommand": "npm install && npm start",
-  "postCreateCommand": "npm i && npm start",
-  "postAttachCommand": "gh codespace ports visibility 3000:public -c $CODESPACE_NAME"
+  "postCreateCommand": "/bin/bash ./.devcontainer/change_port_visibility.sh 3000 public",
+  "postAttachCommand": "npm i && npm start"
 
   // Configure tool-specific properties.
   // "customizations": {},
