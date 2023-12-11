@@ -1,24 +1,29 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
-  // "build": {
-  //   // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-  //   "dockerfile": "../Dockerfile"
-  // },
+  "build": {
+    // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+    "dockerfile": "../Dockerfile"
+  },
   // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
+  "features": {
+    "github-cli": "latest"
+  },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
-      "visibility": "public",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "openPreview"
     }
   },
+  "waitFor": "onCreateCommand",
+  "initializeCommand": "",
+  "onCreateCommand": "",
   // Uncomment the next line to run commands after the container is created.
-  "updateContentCommand": "/bin/bash ./.devcontainer/change_port_visibility.sh 3000 public && npm install && npm start",
+  "updateContentCommand": "pnpm i",
   "postCreateCommand": "/bin/bash ./.devcontainer/change_port_visibility.sh 3000 public",
-  "postAttachCommand": "/bin/bash ./.devcontainer/change_port_visibility.sh 3000 public && npm i && npm start"
+  // "postStartCommand": "",
+  "postAttachCommand": "pnpm start"
 
   // Configure tool-specific properties.
   // "customizations": {},
