@@ -38,7 +38,7 @@
   "scripts": {
     "prepack": "husky install",
     "test": "lint-staged",
-    "pack": "parcel build --no-source-maps ./src/examples/dice-game/index.html --public-url .",
+    "pack": "parcel build --no-source-maps ./examples/dice-game/index.html --public-url .",
     "build": "npm run clean  && npm run pack",
     "clean": "rm -rf .parcel-cache/ dist/",
     "start": "cd ./examples/dice-game && npm run clean && parcel ./index.html",
