@@ -10,6 +10,7 @@
     3000,
     1234
   ],
+  "appPort": [3000,"3000:3000"],
   "portsAttributes": {
     "3000": {
       "onAutoForward": "openPreview",
@@ -19,13 +20,12 @@
       "protocol": "https"
     }
   },
-  "waitFor": "onCreateCommand",
   "initializeCommand": "",
   "onCreateCommand": "",
   // Uncomment the next line to run commands after the container is created.
-  "updateContentCommand": "pnpm i && /bin/bash ./.devcontainer/change_port_visibility.sh 3000 public",
+  "updateContentCommand": "pnpm i",
   "postCreateCommand": "gh codespace ports visibility 3000:public -c $CODESPACE_NAME",
-  "postStartCommand": "pnpm start",
+  "postStartCommand": "pnpm start && /bin/bash ./.devcontainer/change_port_visibility.sh 3000 public",
   "postAttachCommand": "/bin/bash ./.devcontainer/change_port_visibility.sh 3000 public && gh codespace ports visibility 3000:public -c $CODESPACE_NAME"
   // Configure tool-specific properties.
   // "customizations": {},
