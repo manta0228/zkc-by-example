@@ -1,0 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "github-cli": "latest"
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000, 1234],
+  "portsAttributes": {
+    "3000": {
+      "onAutoForward": "openPreview",
+      "protocol": "https"
+    },
+    "1234": {
+      "onAutoForward": "openPreview",
+      "protocol": "https"
+    }
+  },
+  // Uncomment the next line to run commands after the container is created.
+  "updateContentCommand": "pnpm i",
+  "postCreateCommand": "gh codespace ports visibility 3000:public -c $CODESPACE_NAME && gh codespace ports visibility 1234:public -c $CODESPACE_NAME",
+  "postStartCommand": "pnpm start && /bin/bash ./.devcontainer/change_port_visibility.sh 3000 public && /bin/bash ./.devcontainer/change_port_visibility.sh 1234 public"
+}
